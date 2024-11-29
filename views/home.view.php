@@ -4,7 +4,7 @@
 
 <?php loadPartial("showcase-search"); ?>
 
-<?php require loadPartial("top-banner"); ?>
+<?php loadPartial("top-banner"); ?>
 
 <!-- 实习列表 -->
 <section>
