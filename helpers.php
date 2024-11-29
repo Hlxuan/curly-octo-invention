@@ -52,3 +52,15 @@ function inspect($value)
     var_dump($value);
     echo "</pre>";
 }
+
+/**
+ * 输出并终止脚本执行
+ * @param mixed $value
+ * @return void
+ */
+function inspectAndDie($value)
+{
+    echo "<pre>";
+    die(var_dump($value));
+    echo "</pre>";
+}
