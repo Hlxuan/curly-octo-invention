@@ -1,10 +1,10 @@
-<?php require basePath("views/partials/head.php"); ?>
+<?php loadPartial("head"); ?>
 
-<?php require basePath("views/partials/navbar.php"); ?>
+<?php loadPartial("navbar"); ?>
 
-<?php require basePath("views/partials/showcase-search.php"); ?>
+<?php loadPartial("showcase-search"); ?>
 
-<?php require basePath("views/partials/top-banner.php"); ?>
+<?php require loadPartial("top-banner"); ?>
 
 <!-- 实习列表 -->
 <section>
@@ -77,6 +77,6 @@
         </a>
 </section>
 
-<?php require basePath("views/partials/bottom-banner.php"); ?>
+<?php loadPartial("bottom-banner"); ?>
 
-<?php require basePath("views/partials/footer.php") ?>
+<?php loadPartial("footer") ?>
