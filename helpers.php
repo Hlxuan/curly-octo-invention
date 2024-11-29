@@ -17,7 +17,12 @@ function basePath($path = "")
  */
 function loadPartial($name)
 {
-    require basePath("views/partials/{$name}.php");
+    $partialPath = basePath("views/partials/{$name}.php");
+    if (file_exists($partialPath)) {
+        require $partialPath;
+    } else {
+        echo "{$name}视图不存在！";
+    }
 }
 
 /**
