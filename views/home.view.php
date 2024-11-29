@@ -1,6 +1,6 @@
-<?php require basePath("views/partials/head.php") ?>
+<?php require basePath("views/partials/head.php"); ?>
 
-<?php require basePath("views/partials/navbar.php") ?>
+<?php require basePath("views/partials/navbar.php"); ?>
 
 <?php require basePath("views/partials/showcase-search.php"); ?>
 
