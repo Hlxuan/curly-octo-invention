@@ -40,3 +40,15 @@ function loadView($name)
         echo "{$viewPath}视图不存在！";
     }
 }
+
+/**
+ * 检查某个值
+ * @param mixed $value
+ * @return void
+ */
+function inspect($value)
+{
+    echo "<pre>";
+    var_dump($value);
+    echo "</pre>";
+}
