@@ -1,10 +1,80 @@
 <?php
 
-$routes = require basePath("routes.php");
+class Router
+{
+    protected $routes = [];
 
-if (array_key_exists($uri, $routes)) {
-    require(basePath($routes[$uri]));
-} else {
-    http_response_code(404);
-    require(basePath($routes["404"]));
+    /**
+     * 注册路由
+     * @param string $method
+     * @param string $uri
+     * @param string $controller
+     */
+    private function registerRoute($method, $uri, $controller)
+    {
+        $this->routes[] = [
+            "method" => $method,
+            "uri" => $uri,
+            "controller" => $controller
+        ];
+    }
+
+    /**
+     * 添加一个 GET 路由
+     * @param string $uri
+     * @param string $controller
+     */
+    public function addGet($uri, $controller)
+    {
+        $this->registerRoute("GET", $uri, $controller);
+    }
+
+    /**
+     * 添加一个 POST 路由
+     * @param string $uri
+     * @param string $controller
+     */
+    public function addPost($uri, $controller)
+    {
+        $this->registerRoute("POST", $uri, $controller);
+    }
+
+    /**
+     * 添加一个 PUT 路由
+     * @param string $uri
+     * @param string $controller
+     */
+    public function addPut($uri, $controller)
+    {
+        $this->registerRoute("PUT", $uri, $controller);
+    }
+
+    /**
+     * 添加一个 DELETE 路由
+     * @param string $uri
+     * @param string $controller
+     */
+    public function addDelete($uri, $controller)
+    {
+        $this->registerRoute("DELETE", $uri, $controller);
+    }
+
+    /**
+     * 路由
+     * @param string $uri
+     * @param string $method
+     * @return void
+     */
+    public function route($uri, $method)
+    {
+        foreach ($this->routes as $route) {
+            if ($route["uri"] === $uri && $route["method"] === $method) {
+                require basePath($route["controller"]);
+                return;
+            }
+        }
+
+        http_response_code(404);
+        loadView("error/404");
+    }
 }
