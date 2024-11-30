@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# 如果请求的不是真实存在的文件
+RewriteCond %{REQUEST_FILENAME} !-f
+# 如果请求的不是真实存在的目录
+RewriteCond %{REQUEST_FILENAME} !-d
+# 重写规则
+RewriteRule ^ index.php [L]
