@@ -1,3 +1,3 @@
 <?php
 
-echo "发布实习";
+loadView("listings/create");
