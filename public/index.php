@@ -4,8 +4,8 @@ require "../helpers.php";
 
 $routes = [
     "/" => "controllers/home.php",
-    "/listings" => "controllers/listings.php",
-    "/listings/create" => "controllers/listings_create.php",
+    "/listings" => "controllers/listings/index.php",
+    "/listings/create" => "controllers/listings/create.php",
     "404" => "controllers/404.php"
 ];
 
