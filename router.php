@@ -60,6 +60,18 @@ class Router
     }
 
     /**
+     * 错误处理方法
+     * @param int $httpCode
+     * @return void
+     */
+    public function error($httpCode = 404)
+    {
+        http_response_code($httpCode);
+        loadView("error/{$httpCode}");
+        exit;
+    }
+
+    /**
      * 路由
      * @param string $uri
      * @param string $method
